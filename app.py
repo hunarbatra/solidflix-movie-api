@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from tmdbv3api import TMDb
 from tmdbv3api import Movie
@@ -17,6 +17,7 @@ tmdb.debug = True
 movie = Movie()
   
 @app.route("/", methods=['POST'])
+@cross_origin
 def recommendation():
     movies = request.get_json()
     print(movies)
