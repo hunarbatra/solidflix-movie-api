@@ -31,8 +31,9 @@ def recommendation():
         for reco in recos:
             recommendedMovies.append(reco.title)
     sampledRecos = random.sample(recommendedMovies, 5)
-
-    return jsonify(sampledRecos)
+    response = jsonify(sampledRecos)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__=='__main__':
     app.run(port = 5000, debug = True)
