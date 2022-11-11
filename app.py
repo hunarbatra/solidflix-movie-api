@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+# from flask_ngrok import run_with_ngrok 
 from flask_cors import CORS
 
 from tmdbv3api import TMDb
@@ -15,6 +16,8 @@ tmdb.api_key = 'e70f4a66202d9b5df3586802586bc7d2'
 tmdb.language = 'en'
 tmdb.debug = True
 movie = Movie()
+
+# run_with_ngrok(app) # comment
   
 @app.route("/", methods=['POST'])
 def recommendation():
@@ -34,5 +37,5 @@ def recommendation():
 
     return jsonify(sampledRecos)
 
-if __name__=='__main__':
+if __name__=='__main__': 
     app.run(port = 5000, debug = True)
