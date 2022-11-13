@@ -21,7 +21,7 @@
 
 2. ```source .solidflix-env/bin/activate```
 
-3. ```pip install -r /path/to/requirements-pip.txt```
+3. ```pip install -r ./requirements-pip.txt```
 
 4. ```flask run```
 
