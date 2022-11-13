@@ -93,3 +93,4 @@ def results(movies):
     movie_titles = check_movies(movie_titles)
     movie_titles += tmdb_recommendations
     return random.sample(movie_titles, 5)
+
