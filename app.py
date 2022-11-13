@@ -10,7 +10,7 @@ CORS(app)
 # run_with_ngrok(app) # uncomment to use ngrok
   
 @app.route("/", methods=['POST'])
-def recommendation():
+def generate_recos():
     movies = request.get_json()
     res = recommendation.results(movies)
     print(res)
